@@ -94,14 +94,14 @@ function SignUp() {
 //     if (isValid) {
 //         console.log('Form submitted successfully!')
 //     }
-}
+    
 
-handleOnBlur = (event) => {
-    if (event.target.name.length === 0) {
-        eval(`set${event.target.name}Error`)
-    }
+// handleOnBlur = (event) => {
+//     if (event.target.name.length === 0) {
+//         eval(`set${event.target.name}Error`)
+//     }
 
-}
+// }
 
 return (
     <div className="container">
