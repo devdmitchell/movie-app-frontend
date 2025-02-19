@@ -28,17 +28,4 @@ function Nav() {
 export default Nav
 
 
-//sign in page email and password and submit
-//make a signin call to backend jwt
-//put in toast for login
 
-
-//build a login page
-//uses states and change listeners
-//validation for empty text
-//email password
-//submit button
-// similar code to sign up page
-
-
-//signup for api key omdbapi.com

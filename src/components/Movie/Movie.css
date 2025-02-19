@@ -1,0 +1,43 @@
+#mainApp{
+    width: 500;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#movieListContainer{
+    width: 1200;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+#buttonContainer{
+    width: 1200;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.movieDetails{
+text-decoration: none;
+}
+
+.moviePoster{
+    width: 100px;
+}
+
+#movieListContainer > div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#movieListContainer > div > div{
+    flex: 1 1 33%
+}
