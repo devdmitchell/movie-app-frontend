@@ -1,7 +1,7 @@
 import { NavLink, Link } from 'react-router-dom'
 import './Nav.css'
 
-function Nav() {
+function Nav({user, handleUserLogout }) {
   return (
     <nav className='Navbar'>
         <div className="h1-logo">
@@ -11,14 +11,26 @@ function Nav() {
         </div>
         <div className="right-side-nav">
             <ul>
-                <li>
+                {user ? (       //if user exists, display email
+                    <li>
+                        {user.email}
+                    </li>
+                ) : (     //if no one is logged in in, display sign up link
+                    <li>
                     <NavLink to="/signup">
                             Sign Up
                         </NavLink>
                 </li>
+            )}
+            { user ? (
                 <li>
-                    <a href="">Sign In</a>
+                 <NavLink to="/login" onClick={handleUserLogout}>Log Out</NavLink>
+                 </li>
+        ) : (
+                <li>
+                    <NavLink to="/login">Sign In</NavLink>
                 </li>
+        )}
             </ul>
         </div>
     </nav>
