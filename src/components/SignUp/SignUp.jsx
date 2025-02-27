@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './SignUp.css'
 import {isAlpha, isAlphanumeric, isEmail} from 'validator'
-import axios from 'axios'
+import Axios from '../../utils/Axios'
 import { Slide, toast } from 'react-toastify'
 
 function SignUp() {
@@ -56,7 +56,7 @@ function SignUp() {
             passwordConfirmError.length === 0
         ){
             try {
-                const user = await axios.post('http://localhost:3000/api/user/create-user', {
+                const user = await Axios.post('/user/create-user', {
                     firstName, lastName, username, email, password
                 })
                 if(user){

@@ -1,10 +1,11 @@
 import './Login.css'
 import { useState } from 'react'
 import { isEmail } from 'validator'
-import axios from 'axios'
+import setAxiosAuthToken from '../../utils/setAxiosAuthToken'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 import { jwtDecode } from 'jwt-decode'
+import Axios from '../../utils/Axios'
 
 
 
@@ -65,10 +66,11 @@ function LogIn({handleUserLogin}) {
   const handleOnSubmit = async (e) => {
       e.preventDefault()
 try {
- const response = await axios.post('http://localhost:3000/api/user/login', {email, password})
+ const response = await Axios.post('/user/login', {email, password})
   setEmail('')
   setPassword('')
   const jwt = response.data.payload
+  setAxiosAuthToken(jwt)  //set headers for authentication
   const decodedJwt = jwtDecode(jwt)
   handleUserLogin({
     username: decodedJwt.username,
